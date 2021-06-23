@@ -1,0 +1,12 @@
+# Connect to the AWS machine via SSH, install docker and then run
+$ cat /etc/group
+$ grep docker /etc/group
+$ sudo usermod -aG docker ubuntu # add the user in docker group and restart the machine
+# write the python code
+# create the Dockerfile
+# Note: keep both of them in the same location, then run
+$ docker build -t new_image:v1  .
+$ docker images
+$ docker run -itd --name c1 new_image:v1
+$ docker ps
+$ docker logs c1 new_image:v1
