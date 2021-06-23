@@ -2,6 +2,14 @@ import docker
 client = docker.from_env()
 command=input()
 
+# run : to run an image
+# run_b : to run container in the background
+# stop : to stop app running containers
+# logs : to see output of the running container
+# list : to list all images
+# pull : to pull an image
+# commit : to commit a container
+
 #run command
 if(command =='run'):
   print(client.containers.run("alpine", ["echo", "hello", "world"]))
@@ -22,7 +30,7 @@ elif(command == 'logs'):
   print(container.logs())
 
 #list all images
-elif(command == 'list_images'):
+elif(command == 'list'):
   for image in client.images.list():
     print(image.id)
 
