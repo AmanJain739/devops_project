@@ -1,0 +1,9 @@
+ Connect to the AWS machine via SSH, install docker and then run
+
+# create the Dockerfile
+# Note: keep both of them in the same location, then run
+$ docker build -t apache2 .
+$ docker images
+$ docker run -itd apache2
+$ docker ps
+# search public id in browser, it should print "HII LNB"
