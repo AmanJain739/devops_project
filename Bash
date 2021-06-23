@@ -9,4 +9,4 @@ $ docker build -t new_image:v1  .
 $ docker images
 $ docker run -itd --name c1 new_image:v1
 $ docker ps
-$ docker logs c1 new_image:v1
+$ docker logs -f c1
