@@ -1,0 +1,7 @@
+# create the Dockerfile
+# Note: keep both of them in the same location, then run
+$ docker build -t webui:v1 .
+$ docker images
+# Edit Inbound rules and enable 1234 port in your aws instance.
+$ docker run -itd --name webui -p 1234:80 -v /home/ubuntu/DevOps/WebCode:/var/www/html    -v /home/ubuntu/DevOps/webbackend:/var/www/cgi-bin webui:v1
+$ docker ps
