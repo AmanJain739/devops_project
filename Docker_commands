@@ -1,0 +1,14 @@
+$ docker  network create  myhadoop_br  --subnet  192.168.200.0/24  
+$ docker  network  ls
+$ docker  run  -itd --name  namenode  --hostname namenode --network myhadoop_br --ip 192.168.200.100  oraclelinux:8.3  bash 
+$ docker  run  -itd --name  datanode1  --hostname datanode1 --network myhadoop_br  oraclelinux:8.3  bash 
+$ docker  run  -itd --name  datanode2  --hostname datanode2 --network myhadoop_br  oraclelinux:8.3  bash 
+$ docker  exec  -it  namenode  bash
+[root@namenode /]# dnf  install  java-1.8.0-openjdk.x86_64  java-1.8.0-openjdk-devel.x86_64 -y
+[root@namenode /]# java -version 
+[root@namenode ~]# vi  .bashrc 
+#Edit the .bashrc file
+[root@namenode ~]# echo $PATH
+[root@namenode ~]# source  .bashrc 
+[root@namenode ~]# echo $PATH
+# Repeat the same process for the remaining two containers.
